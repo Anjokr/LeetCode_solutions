@@ -7,7 +7,6 @@ class Solution {
         toList(one, l1);
         toList(two, l2);
 
-        //
         int value1 = mix(one);
         int value2 = mix(two);
 
