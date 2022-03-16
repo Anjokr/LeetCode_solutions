@@ -1,4 +1,6 @@
-class Solution {
+//Don't work for numbers that are bigger than what integers can store
+
+class SolutionFailed {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int[] one = new int[100];
         int[] two = new int[100];
