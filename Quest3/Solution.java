@@ -15,7 +15,7 @@ public class Solution {
         for (char c : arr) {
             String character = String.valueOf(c);
             if (check.contains(character)) {
-                check.substring(check.indexOf(character) + 1);
+                check = check.substring(check.indexOf(character) + 1);
             }
             check = check + String.valueOf(character);
             longest = Math.max(check.length(), longest);
