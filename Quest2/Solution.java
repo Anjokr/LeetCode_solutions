@@ -7,28 +7,34 @@ public class Solution {
         // initializing new linkedList to return
         ListNode nodeCurrent = null;
         ListNode start = nodeCurrent;
+        ListNode l1Head = l1;
+        ListNode l2Head = l2;
 
-        while (l1.next != null || l2.next != null) {
+        while (l1Head.next != null || l2Head.next != null) {
             // sum of unit value
             int total = 0;
-            if (l1.next == null) {
-                total = 0 + l2.val + remnant;
-                l2Size++;
-                l2 = l2.next;
-            } else if (l2.next == null) {
-                total = l1.val + 0 + remnant;
-                l1Size++;
-                l1 = l1.next;
+            if (l1Head.next == null) {
+                total = 0 + l2Head.val + remnant;
+                //l2Size++;
+                
+                l2Head = l2Head.next;
+            } else if (l2Head.next == null) {
+                total = l1Head.val + 0 + remnant;
+                //l1Size++;
+                
+                l1Head = l1Head.next;
             } else {
-                total = l1.val + l2.val + remnant;
-                l1Size++;
-                l2Size++;
-                l1 = l1.next;
-                l2 = l2.next;
+                total = l1Head.val + l2Head.val + remnant;
+                //l1Size++;
+                //l2Size++;
+                remnant = total/10;
+                l1Head = l1Head.next;
+                l2Head = l2Head.next;
             }
-
+            remnant = total/10;
             if (nodeCurrent == null) {
                 nodeCurrent = new ListNode(total % 10);
+                start = nodeCurrent;
                 remnant = total / 10;
             } else {
                 nodeCurrent.next = new ListNode(total % 10);
