@@ -2,6 +2,7 @@ public class Solution {
     public int romanToInt(String s) {
         char[] chs = s.toCharArray();
         int result = 0;
+        //iterate through each char in the roman string from end to the start
         for(int i = chs.length-1; i >= 0; i--) {
             if(chs[i]=='M') {
                 if(i != 0 && chs[i-1] == 'C') {
